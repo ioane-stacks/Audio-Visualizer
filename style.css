@@ -70,9 +70,10 @@ body {
     width: 69%;
     margin-top: 30px;
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: auto auto auto;
     margin-left: auto;
     margin-right: auto;
+    /* border: 1px solid white; */
 }
 
 .play-pause {
@@ -84,6 +85,7 @@ body {
     border: none;
     background-color: transparent;
     color: rgb(2, 24, 43);
+    /* border: 1px solid red; */
 }
 
 .play-pause:hover {
@@ -144,14 +146,16 @@ svg {
     width: 70%;
     height: 30px;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 30% 30% 30%;
     gap: 10px;
     padding: 0 10px 0 10px;
     margin: 11px auto 10px auto;
+    /* border: 1px solid white; */
 }
 
 .playlst button {
     background-color: transparent;
+    text-align: center;
     border: none;
     border-width: 1px;
     border-style: solid;
@@ -159,6 +163,8 @@ svg {
     color: rgb(32, 89, 122);
     font-family: digifont;
     font-size: 18px;
+    /* border: 1px solid red; */
+    box-sizing: border-box;
 }
 
 .playlst button:hover {
