@@ -29,15 +29,16 @@ window.onload = () => {
 			playpause.style.fontSize = '46px';
 			audio.play();
 			isAnalyserEnabled = true;
-			audioContext.resume();
 		} else {
 			playpause.innerHTML = '⏵';
 			playpause.style.fontSize = '62px';
 			audio.pause();
 			isAnalyserEnabled = false;
 		}
+		audioContext.resume();
 	};
 	const audioContext = new AudioContext();
+	audioContext.resume();
 
 	const source = audioContext.createMediaElementSource(audio);
 	const analyser = audioContext.createAnalyser();
