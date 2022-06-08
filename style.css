@@ -1,0 +1,132 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: digifont;
+    src: url('./fonts/digital-7.ttf');
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    background-color: #eee;
+    background-image: linear-gradient(rgba(7, 37, 65, .95), rgba(7, 37, 65, .95)), url('./964419.jpg');
+    background-size: 150%;
+    background-position: center;
+}
+
+.audioCtrl {
+    width: 350px;
+    height: 350px;
+    border: 1px solid rgb(64, 116, 165);
+    background-color: rgba(7, 37, 65, .9);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.vCircle {
+    width: 350px;
+    height: 350px;
+    border: 1px solid rgb(64, 116, 165);
+    box-shadow: 0 0 10px rgba(64, 116, 165, .6), inset 0 0 10px rgba(64, 116, 165, .6);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    overflow: hidden;
+    transition: .18s;
+}
+
+/* .light {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 76px;
+    right: 55px;
+    border: none;
+    border-radius: 0px;
+    background-image: radial-gradient(rgba(35, 72, 107, 0.3), rgba(10, 46, 80, 0.1), transparent);
+    z-index: -1;
+} */
+
+.play-pause {
+    width: 90px;
+    height: 90px;
+    margin: 10px auto 0 auto;
+    text-align: center;
+    font-size: 62px;
+    text-shadow: -3px 3px 5px rgba(0, 0, 0, 0.4);
+    border: none;
+    background-color: transparent;
+    color: rgb(2, 24, 43);
+}
+
+.play-pause:hover {
+    color: rgb(4, 33, 54);
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* border: 1px solid white; */
+    bottom: 50%;
+    right: 50%;
+    transform: translate(50%, 50%);
+}
+
+#sv {
+    stroke: rgb(64, 116, 165);
+    stroke-width: 1px;
+    fill: transparent;
+    filter: drop-shadow(0 0 5px rgb(64, 116, 165));
+}
+
+.audioCtrl h1 {
+    font-family: digifont;
+    font-size: 6rem;
+    user-select: none;
+    color: rgb(117, 197, 243);
+    text-shadow: -5px 5px 5px rgba(1, 18, 34, 0.9);
+}
+
+.c-time {
+    width: auto;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    /* border: 1px solid white; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: unset;
+
+}
+
+.dots {
+    width: 3px;
+    height: 3px;
+    background-color: rgb(117, 197, 243);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
