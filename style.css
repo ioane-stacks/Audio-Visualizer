@@ -157,6 +157,8 @@ svg {
     border-style: solid;
     border-image: linear-gradient(to right, transparent, rgba(64, 116, 165, 0.5), transparent) 1;
     color: rgb(32, 89, 122);
+    font-family: digifont;
+    font-size: 18px;
 }
 
 .playlst button:hover {
