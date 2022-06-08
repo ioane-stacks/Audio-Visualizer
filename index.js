@@ -94,7 +94,7 @@ window.onload = () => {
 						const choose = Math.trunc(Math.random() * 4);
 						drop.classList.add('dots');
 						drop.id = 'drp' + Math.trunc(Math.random() * 10000);
-						document.body.insertAdjacentElement('beforebegin', drop);
+						document.body.insertAdjacentElement('afterbegin', drop);
 						isNodeAdded = true;
 						new dropEffector(drop.id, 350);
 					}
