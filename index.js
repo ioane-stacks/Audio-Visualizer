@@ -6,6 +6,11 @@ window.onload = () => {
 	const vCircle = document.querySelector('.vCircle');
 	const svgLine = document.getElementById('sv');
 	const timeAudio = document.getElementById('tim');
+	const mus1 = document.getElementById('mus1');
+	const mus2 = document.getElementById('mus2');
+	const mus3 = document.getElementById('mus3');
+	const volup = document.getElementById('volup');
+	const voldown = document.getElementById('voldown');
 
 	function changeColor(r, g, b) {
 		let _r = r;
@@ -20,24 +25,75 @@ window.onload = () => {
 	window.onmousemove = (e) => {
 		let g = Math.round((20 / 1366) * e.pageX) + 10;
 		let b = Math.round((20 / 1366) * e.pageX) + 35;
-		document.body.style.backgroundColor = changeColor(0, g, b);
 	};
+
+	mus1.onclick = () => {
+		audio.setAttribute('src', './NERVO_-_Bulletproof_ft_Harrison_Mi_(getmp3.pro).mp3');
+		audioPause();
+		ClearEverything();
+	};
+
+	mus2.onclick = () => {
+		audio.setAttribute('src', './flowless.mp3');
+		audioPause();
+		ClearEverything();
+	};
+
+	mus3.onclick = () => {
+		audio.setAttribute('src', './spicy-live-version-re-work.mp3');
+		audioPause();
+		ClearEverything();
+	};
+
+	function audioPlay() {
+		playpause.innerHTML = '❚❚';
+		playpause.style.fontSize = '46px';
+		audio.play();
+		isAnalyserEnabled = true;
+	}
+
+	function audioPause() {
+		playpause.innerHTML = '⏵';
+		playpause.style.fontSize = '52px';
+		audio.pause();
+		isAnalyserEnabled = false;
+	}
+
+	function ClearEverything() {
+		vCircle.style.width = '350px';
+		vCircle.style.height = '350px';
+		x = 0;
+		arr = [];
+		isAnalyserEnabled = false;
+		isNodeAdded = false;
+		svgLine.removeAttribute('points');
+		timeAudio.innerHTML = '00:00';
+		audio.volume = 1;
+	}
 
 	playpause.onclick = () => {
 		if (playpause.innerHTML === '⏵') {
-			playpause.innerHTML = '❚❚';
-			playpause.style.fontSize = '46px';
-			audio.play();
-			isAnalyserEnabled = true;
+			audioPlay();
 		} else {
-			playpause.innerHTML = '⏵';
-			playpause.style.fontSize = '62px';
-			audio.pause();
-			isAnalyserEnabled = false;
+			audioPause();
 		}
 		audioContext.resume();
 	};
-	const audioContext = new AudioContext();
+
+	voldown.onclick = () => {
+		if (audio.volume > 0) {
+			audio.volume -= 0.2;
+			audio.volume = audio.volume.toFixed(1);
+		}
+		console.log(audio.volume);
+	};
+	volup.onclick = () => {
+		if (audio.volume < 1) {
+			audio.volume += 0.2;
+			audio.volume = audio.volume.toFixed(1);
+		}
+	};
+	const audioContext = new window.AudioContext() || new window.webkitAudioContext();
 	audioContext.resume();
 
 	const source = audioContext.createMediaElementSource(audio);
